@@ -18,11 +18,11 @@ entries:
           url: https://www.jenkins.io/
     apiVersion: v2
     appVersion: 2.361.4
-    created: "2022-12-13T18:32:55.698868576Z"
+    created: "2022-12-13T19:26:05.069039763Z"
     description: Jenkins - Build great things at any scale! The leading open source
       automation server, Jenkins provides hundreds of plugins to support building,
       deploying and automating any project.
-    digest: 18b329f7d1135da12c94d8ee85b8f1010e97a8a262451eb4247c498b4d322f44
+    digest: 9bff526e979b90e97d553d49c48c60b81326925ee36bb058b19a4b7b37b2cc5b
     home: https://jenkins.io/
     icon: https://get.jenkins.io/art/jenkins-logo/logo.svg
     maintainers:
@@ -45,4 +45,4 @@ entries:
     urls:
     - jenkins-4.2.15.tgz
     version: 4.2.15
-generated: "2022-12-13T18:32:55.689557814Z"
+generated: "2022-12-13T19:26:05.060884256Z"
