@@ -815,7 +815,7 @@ persistence:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "efssc"
+  storageClass: "sfc-sc"
   annotations: {}
   labels: {}
   accessMode: "ReadWriteOnce"
