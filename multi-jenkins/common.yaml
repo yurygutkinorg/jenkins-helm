@@ -69,7 +69,21 @@ controller:
     limits:
       cpu: "4000m"
       memory: "12288Mi"
-  # Overrides the init container default values
+master:
+  tag: "2.263.1"
+  ingress:
+    hostName: enzyme-jenkins.k8s.ghdna.io
+    enabled: true
+    path: "/"
+    annotations:
+      kubernetes.io/ingress.class: nginx-public
+    tls:
+      - secretName: k8s.ghdna.io.tls
+        hosts:
+          - enzyme-jenkins.k8s.ghdna.io
+
+
+# Overrides the init container default values
   # initContainerResources:
   #   requests:
   #     cpu: "50m"
