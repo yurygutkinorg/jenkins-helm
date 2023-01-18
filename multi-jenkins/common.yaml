@@ -465,8 +465,8 @@ controller:
     hostName: enzyme-jenkins.k8s.ghdna.io
     tls:
       - secretName: k8s.ghdna.io.tls
-        hosts:
-          - enzyme-jenkins.k8s.ghdna.io
+        hosts: {}
+     #     - enzyme-jenkins.k8s.ghdna.io
     # - secretName: jenkins.cluster.local
     #   hosts:
     #     - jenkins.cluster.local
