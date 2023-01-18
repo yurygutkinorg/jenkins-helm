@@ -69,8 +69,8 @@ controller:
     limits:
       cpu: "4000m"
       memory: "12288Mi"
-master:
-  tag: "2.263.1"
+
+
   ingress:
     hostName: enzyme-jenkins.k8s.ghdna.io
     enabled: true
