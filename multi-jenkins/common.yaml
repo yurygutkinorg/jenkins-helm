@@ -32,6 +32,7 @@ controller:
   #      - "-a"
   disableRememberMe: false
   numExecutors: 0
+
   # configures the executor mode of the Jenkins node. Possible values are: NORMAL or EXCLUSIVE
   executorMode: "NORMAL"
   # This is ignored if enableRawHtmlMarkupFormatter is true
@@ -40,7 +41,6 @@ controller:
   # The default configuration uses this secret to configure an admin user
   # If you don't need that user or use a different security realm then you can disable it
   adminSecret: true
-
   hostNetworking: false
   # When enabling LDAP or another non-Jenkins identity source, the built-in admin account will no longer exist.
   # If you disable the non-Jenkins identity store and instead use the Jenkins internal one,
@@ -69,20 +69,6 @@ controller:
     limits:
       cpu: "4000m"
       memory: "12288Mi"
-
-
-  ingress:
-    hostName: enzyme-jenkins.k8s.ghdna.io
-    enabled: true
-    path: "/"
-    annotations:
-      kubernetes.io/ingress.class: nginx-public
-    tls:
-      - secretName: k8s.ghdna.io.tls
-        hosts:
-          - enzyme-jenkins.k8s.ghdna.io
-
-
 # Overrides the init container default values
   # initContainerResources:
   #   requests:
@@ -450,7 +436,7 @@ controller:
   updateStrategy: {}
 
   ingress:
-    enabled: false
+    enabled: true
     # Override for the default paths that map requests to the backend
     paths: []
     # - backend:
@@ -463,9 +449,11 @@ controller:
     #     servicePort: 8080
     # For Kubernetes v1.14+, use 'networking.k8s.io/v1beta1'
     # For Kubernetes v1.19+, use 'networking.k8s.io/v1'
-    apiVersion: "extensions/v1beta1"
+    #
+    apiVersion: "networking.k8s.io/v1"
     labels: {}
-    annotations: {}
+    annotations:
+       kubernetes.io/ingress.class: nginx-public
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
@@ -474,8 +462,11 @@ controller:
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
     # configures the hostname e.g. jenkins.example.com
-    hostName:
+    hostName: enzyme-jenkins.k8s.ghdna.io
     tls:
+      - secretName: k8s.ghdna.io.tls
+        hosts:
+          - enzyme-jenkins.k8s.ghdna.io
     # - secretName: jenkins.cluster.local
     #   hosts:
     #     - jenkins.cluster.local
@@ -616,7 +607,6 @@ controller:
         /MwpRxxazoda9r45kqQpyG+XoM4pB+Fd3JzMc4FUGxfVPxJU4jLawnJJiZ3vqiSyaB0YyUL+Er1Q
         6NnqtR4gEBF0ZVlQmkycFvD4EC2boP943dLqNUvop+4R3SM1QMM6P5u8iTXtHd/VN4MwMyy1wtog
         hYAzODo1Jt59pcqqKJEas0C/lFJEB3frw4ImNx5fNlJYOpx+ijfQs9m39CevDq0=
-
 agent:
   enabled: true
   defaultsProviderTemplate: ""
