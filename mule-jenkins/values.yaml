@@ -462,7 +462,7 @@ controller:
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
     # configures the hostname e.g. jenkins.example.com
-    hostName: mule-jenkins.k8s.ghdna.io
+    hostName: non-prod.mule-jenkins.k8s.ghdna.io
     tls:
       - secretName: k8s.ghdna.io.tls
         hosts:
