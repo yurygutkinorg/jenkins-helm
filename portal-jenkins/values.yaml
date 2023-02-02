@@ -462,11 +462,11 @@ controller:
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
     # configures the hostname e.g. jenkins.example.com
-    hostName: portal-jenkins.k8s.ghdna.io
+    hostName: non-prod.portal-jenkins.k8s.ghdna.io
     tls:
-      - secretName: k8s.ghdna.io.tls
+      - secretName: non-prod.k8s.ghdna.io.tls
         hosts:
-        - portal-jenkins.k8s.ghdna.io
+        - non-prod.portal-jenkins.k8s.ghdna.io
     # - secretName: jenkins.cluster.local
     #   hosts:
     #     - jenkins.cluster.local
