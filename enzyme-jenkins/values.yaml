@@ -464,7 +464,7 @@ controller:
     # configures the hostname e.g. jenkins.example.com
     hostName: non-prod.enzyme-jenkins.k8s.ghdna.io
     tls:
-      - secretName: non-prod.k8s.ghdna.io.tls
+      - secretName: k8s.ghdna.io.tls
         hosts:
         - non-prod.enzyme-jenkins.k8s.ghdna.io
     # - secretName: jenkins.cluster.local
