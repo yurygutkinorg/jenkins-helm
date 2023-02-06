@@ -461,12 +461,14 @@ controller:
     # ingressClassName: nginx
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
-    # configures the hostname e.g. jenkins.example.com
-    hostName: non-prod-enzyme-jenkins.k8s.ghdna.io
+
+    # configures the hostname e.g.. jenkins.example.com
+    hostName: npenzyme-jenkins.k8s.ghdna.io
     tls:
       - secretName: k8s.ghdna.io.tls
         hosts:
-        - non-prod-enzyme-jenkins.k8s.ghdna.io
+        - npenzyme-jenkins.k8s.ghdna.io
+
     # - secretName: jenkins.cluster.local
     #   hosts:
     #     - jenkins.cluster.local
