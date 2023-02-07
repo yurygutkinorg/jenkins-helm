@@ -453,7 +453,7 @@ controller:
     apiVersion: "networking.k8s.io/v1"
     labels: {}
     annotations:
-       kubernetes.io/ingress.class: nginx-jenkins
+       kubernetes.io/ingress.class: nginx-private
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
@@ -461,8 +461,7 @@ controller:
     # ingressClassName: nginx
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
-
-    # configures the hostname e.g.. jenkins.example.com
+    # configures the hostname e.g. jenkins.example.com
     hostName: npenzyme-jenkins.k8s.ghdna.io
     tls:
       - secretName: k8s.ghdna.io.tls
