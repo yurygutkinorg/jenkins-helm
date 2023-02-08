@@ -477,7 +477,7 @@ controller:
   # A secondary ingress will let you expose different urls
   # with a differnt configuration
   secondaryingress:
-    enabled: false
+    enabled: true
     # paths you want forwarded to the backend
     # ex /github-webhook
     paths: []
@@ -485,12 +485,32 @@ controller:
     # For Kubernetes v1.19+, use 'networking.k8s.io/v1'
     apiVersion: "extensions/v1beta1"
     labels: {}
-    annotations: {}
+    annotations:
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: 10                                                                                                                                                                │
+    alb.ingress.kubernetes.io/healthcheck-path: /                                                                                                                                                                             │
+    alb.ingress.kubernetes.io/healthcheck-port: 80                                                                                                                                                                            │
+    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP                                                                                                                                                                      │
+    alb.ingress.kubernetes.io/healthcheck-timeout-seconds: 2                                                                                                                                                                  │
+    alb.ingress.kubernetes.io/healthy-threshold-count: 2                                                                                                                                                                      │
+    alb.ingress.kubernetes.io/listen-ports: [{"HTTP": 80}, {"HTTPS": 443}]                                                                                                                                                    │
+    alb.ingress.kubernetes.io/load-balancer-name: jenkins-alb                                                                                                                                                                 │
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: true                                                                                                                                                       │
+    alb.ingress.kubernetes.io/scheme: internet-facing                                                                                                                                                                         │
+    alb.ingress.kubernetes.io/security-groups: multi-jenkins-sg                                                                                                                                                               │
+    alb.ingress.kubernetes.io/ssl-redirect: 443                                                                                                                                                                               │
+    alb.ingress.kubernetes.io/success-codes: 200-399                                                                                                                                                                          │
+    alb.ingress.kubernetes.io/target-type: ip                                                                                                                                                                                 │
+    alb.ingress.kubernetes.io/unhealthy-threshold-count: 3                                                                                                                                                                    │
+    kubernetes.io/ingress.class: alb                                                                                                                                                                                          │
+    meta.helm.sh/release-name: enzyme-jenkins                                                                                                                                                                                 │
+    meta.helm.sh/release-namespace: enzyme-jenkins                                                                                                                                                                            │
+    prometheus.io/port: 10254                                                                                                                                                                                                 │
+    prometheus.io/scrape: true
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
     # For Kubernetes >= 1.18 you should specify the ingress-controller via the field ingressClassName
     # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
-    # ingressClassName: nginx
+    ingressClassName: alb
     # configures the hostname e.g. jenkins-external.example.com
     hostName:
     tls:
