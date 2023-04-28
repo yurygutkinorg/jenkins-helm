@@ -250,12 +250,10 @@ controller:
     - mina-sshd-api-core:2.9.2-62.v199162f0a_2f8
     - okhttp-api:4.10.0-132.v7a_7b_91cef39c
     - jdk-tool:66.vd8fa_64ee91b_d
-    - periodicbackup:2.249.1
     - workflow-aggregator:596.v8c21c963d92d
     - pipeline-aggregator-view:1.15
     - pipeline-graph-analysis:202.va_d268e64deb_3
     - blueocean-pipeline-api-impl:1.27.3
-    - blueocean-pipeline-scm-api:2.361.4
     - pipeline-utility-steps:2.15.2
     - workflow-api:1208.v0cc7c6e0da_9e
     - workflow-basic-steps:1017.vb_45b_302f0cea_
@@ -298,11 +296,13 @@ controller:
     - sshd:3.275.v9e17c10f2571
     - structs:324.va_f5d6774f3a_d
     - thinBackup:1.17
-    - token-macro:359.vb_cde11682e0cA
     - trilead-api:2.84.v72119de229b_7
     - variant:59.vf075fe829ccb
     - blueocean-web:1.27.3
     - ws-cleanup:0.45
+    - periodicbackup:2.249.1
+    - blueocean-pipeline-scm-api:2.361.4
+    - token-macro:359.vb_cde11682e0cA
 
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
