@@ -301,11 +301,11 @@ controller:
     - blueocean-web:1.27.3
     - ws-cleanup:0.45
     - periodicbackup:2.249.1
-    - blueocean-pipeline-scm-api:2.361.4
+    # - blueocean-pipeline-scm-api:2.361.4
     - token-macro:359.vb_cde11682e0cA
 
   # Set to false to download the minimum required version of all dependencies.
-  installLatestPlugins: true
+  installLatestPlugins: false
 
   # Set to true to download latest dependencies of any plugin that is requested to have the latest version.
   installLatestSpecifiedPlugins: false
