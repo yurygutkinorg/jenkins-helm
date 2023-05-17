@@ -298,7 +298,7 @@ controller:
     - thinBackup:1.17
     - trilead-api:2.84.v72119de229b_7
     - variant:59.vf075fe829ccb
-    - blueocean-web:1.27.3
+    # - blueocean-web:1.27.3
     - ws-cleanup:0.45
     #- periodicbackup:2.249.1
     # - blueocean-pipeline-scm-api:2.361.4
