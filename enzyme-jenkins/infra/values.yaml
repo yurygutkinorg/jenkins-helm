@@ -300,7 +300,7 @@ controller:
     - variant:59.vf075fe829ccb
     # - blueocean-web:1.27.3
     - ws-cleanup:0.45
-    #- periodicbackup:2.249.1
+    - periodicbackup:1.9
     # - blueocean-pipeline-scm-api:2.361.4
     #- token-macro:359.vb_cde11682e0cA
 
