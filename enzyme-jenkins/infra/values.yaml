@@ -304,7 +304,7 @@ controller:
     - ws-cleanup:0.45
     - periodicbackup:1.9
     # - blueocean-pipeline-scm-api:2.361.4
-    - token-macro:359.vb_cde11682e0cA
+    # - token-macro:359.vb_cde11682e0cA
 
   # Set to false to download the minimum required version of all dependencies.
   installLatestPlugins: true
