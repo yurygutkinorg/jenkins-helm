@@ -25,6 +25,7 @@ controller:
   tagLabel: 2.361.4
   imagePullPolicy: "Always"
   imagePullSecretName:
+  - name: ghinfra-registry
   # Optionally configure lifetime for controller-container
   lifecycle:
   #  postStart:
