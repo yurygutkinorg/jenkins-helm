@@ -18,9 +18,11 @@ renderHelmLabels: true
 controller:
   # Used for label app.kubernetes.io/component
   componentName: "jenkins-controller"
-  image: "jenkins/jenkins"
+  #image: "jenkins/jenkins"
+  image: "ghi-ghenzyme.jfrog.io/jenkins"
   # tag: "2.361.4-jdk11"
-  tagLabel: jdk11
+  # tagLabel: jdk11
+  tagLabel: 2.361.4
   imagePullPolicy: "Always"
   imagePullSecretName:
   # Optionally configure lifetime for controller-container
