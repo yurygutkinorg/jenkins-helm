@@ -19,7 +19,7 @@ controller:
   # Used for label app.kubernetes.io/component
   componentName: "jenkins-controller"
   #image: "jenkins/jenkins"
-  image: "ghi-ghenzyme.jfrog.io/jenkins"
+  image: "ghi-ghinfra.jfrog.io/jenkins"
   # tag: "2.361.4-jdk11"
   # tagLabel: jdk11
   tagLabel: 2.361.4
