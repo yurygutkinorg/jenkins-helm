@@ -382,34 +382,35 @@ controller:
   # /var/jenkins_home/casc_configs (by default) and will be processed by the Configuration as Code Plugin.  The lines after each |
   # become the content of the configuration yaml file.  The first line after this is a JCasC root element, eg jenkins, credentials,
   # etc.  Best reference is https://<jenkins_url>/configuration-as-code/reference.  The example below creates a welcome message:
-  JCasC:
-    defaultConfig: false
-    configUrls: []
+  # Disabled for testing
+  #JCasC:
+  #  defaultConfig: false
+  #  configUrls: []
     # - https://acme.org/jenkins.yaml
     # Remote URL:s for configuration files.
-    configScripts: {}
+  #  configScripts: {}
     #  welcome-message: |
     #    jenkins:
     #      systemMessage: Welcome to our CI\CD server.  This Jenkins is configured and managed 'as code'.
     # Allows adding to the top-level security JCasC section. For legacy,  default the chart includes apiToken configurations
-    security:
-      apiToken:
-        creationOfLegacyTokenEnabled: false
-        tokenGenerationOnCreationEnabled: false
-        usageStatisticsEnabled: true
+  #  security:
+  #    apiToken:
+  #      creationOfLegacyTokenEnabled: false
+  #      tokenGenerationOnCreationEnabled: false
+  #      usageStatisticsEnabled: true
     # Ignored if securityRealm is defined in controller.JCasC.configScripts
-    securityRealm: |-
-      local:
-        allowsSignup: false
-        enableCaptcha: false
-        users:
-        - id: "${chart-admin-username}"
-          name: "Jenkins Admin"
-          password: "${chart-admin-password}"
+  #  securityRealm: |-
+  #    local:
+  #      allowsSignup: false
+  #      enableCaptcha: false
+  #      users:
+  #      - id: "${chart-admin-username}"
+  #        name: "Jenkins Admin"
+  #        password: "${chart-admin-password}"
     # Ignored if authorizationStrategy is defined in controller.JCasC.configScripts
-    authorizationStrategy: |-
-      loggedInUsersCanDoAnything:
-        allowAnonymousRead: false
+  #  authorizationStrategy: |-
+  #    loggedInUsersCanDoAnything:
+  #      allowAnonymousRead: false
   # Optionally specify additional init-containers
   customInitContainers: []
   # - name: custom-init
