@@ -253,7 +253,7 @@ controller:
     - workflow-aggregator:596.v8c21c963d92d
     - pipeline-aggregator-view:1.15
     - pipeline-graph-analysis:202.va_d268e64deb_3
-    - blueocean-pipeline-api-impl:1.27.3
+    #- blueocean-pipeline-api-impl:1.27.3
     - pipeline-utility-steps:2.15.2
     - workflow-api:1208.v0cc7c6e0da_9e
     - workflow-basic-steps:1017.vb_45b_302f0cea_
