@@ -1,0 +1,28 @@
+USER-SUPPLIED VALUES:
+master:
+  containerEnv:
+  - name: JENKINS_HOME
+    value: /var/jenkins_home
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx-public
+    enabled: true
+    hostName: <jenkinsHostName>-jenkins.k8s.ghdna.io
+    path: /
+    tls:
+    - hosts:
+      - <jenkinsHostName>-jenkins.k8s.ghdna.io
+      secretName: k8s.ghdna.io.tls
+  initContainerEnv:
+  - name: JENKINS_HOME
+    value: /var/jenkins_home
+  resources:
+    limits:
+      cpu: "4"
+      memory: 8Gi
+    requests:
+      cpu: "2"
+      memory: 4Gi
+  tag: 2.387.3
+persistence:
+  existingClaim: <jenkinsHostName>-jenkins

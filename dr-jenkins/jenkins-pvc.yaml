@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: <jenkinsHostName>-jenkins
+  namespace: <jenkinsHostName>-jenkins
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 300Gi
+  storageClassName: gp2
+  volumeName: <jenkinsHostName>-jenkins

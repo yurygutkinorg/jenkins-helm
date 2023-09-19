@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx-public
+    meta.helm.sh/release-name: <jenkinsHostName>-jenkins
+    meta.helm.sh/release-namespace: <jenkinsHostName>-jenkins
+  creationTimestamp: "2020-12-23T10:59:39Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/component: jenkins-master
+    app.kubernetes.io/instance: <jenkinsHostName>-jenkins
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: jenkins
+    helm.sh/chart: jenkins-12.2.1
+  name: <jenkinsHostName>-jenkins
+  namespace: <jenkinsHostName>-jenkins
+  resourceVersion: "226434512"
+  uid: 1879c0e9-aaaa-472a-87c6-b77f0f00fd4e
+spec:
+  rules:
+  - host: <jenkinsHostName>-jenkins.k8s.ghdna.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: <jenkinsHostName>-jenkins
+            port:
+              number: 8080
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - <jenkinsHostName>-jenkins.8s.ghdna.io
+    secretName: k8s.ghdna.io.tls
