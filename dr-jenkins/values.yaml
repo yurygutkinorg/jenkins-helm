@@ -26,3 +26,4 @@ master:
   tag: 2.387.3
 persistence:
   existingClaim: <jenkinsHostName>-jenkins
+nodeSelector: {"failure-domain.beta.kubernetes.io/zone": "us-west-2a"}
